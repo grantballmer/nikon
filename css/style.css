@@ -94,15 +94,17 @@ html, body {
   width: 100%;
   height: 100vh;
   padding: 2% 0;
-  background-image: url("http://www.travelcaffeine.com/wp-content/uploads/2017/09/laguna-beach-california-sunset-heisler-park-rocks-nikon-d850.jpg");
+  background-image: url("https://hdwallsource.com/img/2014/10/ocean-sunset-35994-36819-hd-wallpapers.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  position: relative; }
+  position: relative;
+  overflow-y: hidden; }
   @media (min-width: 812px) {
     .website {
       padding: 2% 4%; } }
 
 nav {
+  height: 10%;
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -115,9 +117,13 @@ nav {
       align-items: center;
       flex-wrap: nowrap; } }
   nav img {
+    height: 50px;
+    width: 50px;
     margin-left: 4%; }
     @media (min-width: 812px) {
       nav img {
+        height: 75px;
+        width: 75px;
         padding: 0; } }
 
 .icon {
@@ -191,7 +197,7 @@ nav {
       margin: 6% auto; } }
   @media (min-width: 812px) {
     .banner {
-      margin: 4% auto; } }
+      margin: 1% auto; } }
 
 .bannerText {
   display: inline-block;
@@ -217,6 +223,7 @@ nav {
 
 .website__content {
   width: 100%;
+  height: 60%;
   margin-top: 10px;
   display: flex;
   flex-direction: column; }
@@ -236,25 +243,39 @@ nav {
         padding: 0;
         width: 50%; } }
   .website__content--image {
-    max-height: 100%;
-    max-width: 100%;
+    height: 50%;
     user-select: none; }
+    @media (min-width: 550px) {
+      .website__content--image {
+        height: 100%; } }
     .website__content--image img {
-      max-height: 100%;
-      max-width: 100%; }
+      max-height: 100%; }
+      @media (min-width: 550px) {
+        .website__content--image img {
+          max-width: 100%; } }
   .website__content--text {
     flex-direction: column;
+    padding: 0 5%;
     color: white; }
+    @media (min-width: 812px) {
+      .website__content--text {
+        padding: 0 10%; } }
     .website__content--text h1 {
       font-family: "Allerta Stencil";
-      color: white;
-      font-size: 3.5rem; }
-      @media (min-width: 550px) {
+      font-size: 4rem; }
+      @media (min-width: 812px) {
         .website__content--text h1 {
           font-size: 5rem; } }
     .website__content--text p {
-      font-size: 1rem;
+      font-size: .85rem;
+      font-weight: 500;
       text-align: justify; }
+      @media (min-width: 812px) {
+        .website__content--text p {
+          font-size: .95rem; } }
+      @media (min-width: 1024px) {
+        .website__content--text p {
+          font-size: 1.1rem; } }
 
 .products {
   width: 100%;
