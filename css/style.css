@@ -80,10 +80,10 @@ html, body {
     flex-direction: column;
     padding: 0 10%;
     margin-bottom: 2%;
-    font-size: .68rem; }
+    font-size: .65rem; }
     @media (min-width: 550px) {
       .initial__content--text {
-        font-size: .75rem;
+        font-size: .85rem;
         padding: 0 10%;
         margin: 0; } }
     .initial__content--text h1 {
@@ -292,10 +292,15 @@ nav {
       flex-direction: row; } }
   .slider__camera {
     position: absolute;
-    max-height: 100%;
+    max-height: 60%;
     left: 50%;
-    top: -50%;
+    top: -25%;
     transform: translateX(-50%); }
+    @media (min-width: 812px) {
+      .slider__camera {
+        max-height: 75%; } }
+    .slider__camera:not(:first-of-type) {
+      display: none; }
   .slider__half {
     height: 50%;
     width: 100%;
@@ -327,18 +332,23 @@ nav {
       .slider__info {
         padding: 0 8%; } }
     .slider__info--name {
-      padding-left: 15%;
+      padding-left: 25%;
       align-self: start;
       font-family: "Allerta Stencil"; }
-    @media (min-width: 550px) {
-      .slider__info--description {
-        font-size: .65rem; } }
-    @media (min-width: 812px) {
-      .slider__info--description {
-        font-size: .8rem; } }
-    @media (min-width: 1024px) {
-      .slider__info--description {
-        font-size: 1rem; } }
+      @media (min-width: 550px) {
+        .slider__info--name {
+          padding-left: 10%; } }
+    .slider__info--description {
+      font-size: .65rem; }
+      @media (min-width: 550px) {
+        .slider__info--description {
+          font-size: .7rem; } }
+      @media (min-width: 812px) {
+        .slider__info--description {
+          font-size: .8rem; } }
+      @media (min-width: 1024px) {
+        .slider__info--description {
+          font-size: 1rem; } }
 
 .slideNav {
   width: 100%;
@@ -363,17 +373,9 @@ nav {
   cursor: pointer; }
   @media (min-width: 550px) {
     .camera {
-      padding: 0 7px;
-      margin: 0 .7px;
-      font-size: .8rem; } }
-  @media (min-width: 812px) {
-    .camera {
+      padding: 0 15px;
       margin: 0 2px;
-      padding: 0 10px;
-      font-size: 1rem; } }
-  @media (min-width: 1024px) {
-    .camera {
-      font-size: 1.2rem; } }
+      font-size: 1.5rem; } }
   .camera:first-of-type {
     background-color: #FFDE00; }
 
@@ -424,13 +426,16 @@ nav {
       grid-column: 3/5;
       grid-row: 1; } }
   .products__lenses--one img {
-    position: realtive;
+    position: relative;
     transform: rotate(180deg) translate(-30%, 25%); }
+  .products__lenses--one h3 {
+    margin-top: -15px; }
   .products__lenses--one h3, .products__lenses--one p {
     padding: 0 5% 0 15%;
     color: white; }
   .products__lenses--one p {
-    font-size: .9rem; }
+    font-size: .9rem;
+    margin-bottom: 12px; }
 
 .products__lenses--two, .products__lenses--three {
   height: 100%;
@@ -469,7 +474,7 @@ nav {
       grid-column: 2; } }
 
 .products__lenses--four {
-  padding: 2%;
+  padding: 2% .5% 2% 2%;
   grid-column: 1/5;
   background-image: url("https://www.thephotoargus.com/wp-content/uploads/2015/10/Black-and-White-Portrait-3.jpg");
   background-position: center;
@@ -483,7 +488,13 @@ nav {
       grid-column: 3/5; } }
   .products__lenses--four .description {
     padding-right: 40%;
-    font-size: .8rem; }
+    font-size: .6rem; }
+    @media (min-width: 550px) {
+      .products__lenses--four .description {
+        font-size: .8rem; } }
   .products__lenses--four img {
-    width: 30%;
+    width: 20%;
     transform: rotate(90deg); }
+    @media (min-width: 550px) {
+      .products__lenses--four img {
+        width: 30%; } }

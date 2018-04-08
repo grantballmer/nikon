@@ -51,9 +51,13 @@ function clearBackgrounds() {
 };
 
 $(".camera").on("click", function(event) {
+	clearBackgrounds();
+	$(this).css("backgroundColor", "yellow");
   let index = $(".camera").index($(this));
-  console.log(index + ", " + cameraInfoArray[index].image);
-  $(".slider img").attr("src", cameraInfoArray[index].image);
+	let currentArrayItem = cameraInfoArray[index];
+	$(".slider__camera").attr("src", currentArrayItem.image);
+	$(".slider__info--name").text(currentArrayItem.name);
+	$(".slider__info--description").text(currentArrayItem.info);
 })
 /*
 cameraNames.forEach(function(camera, index) {
