@@ -1,0 +1,600 @@
+$yellow: #FFDE00;
+$turquoise: #2ad0d5;
+
+$wide-mobile-width: 550px; 
+$tablet-width: 812px;
+$desktop-width: 1024px;
+$border-curve: 25px;
+
+@mixin wide-mobile {
+  @media (min-width: #{$wide-mobile-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+html, body {
+  height: 100%;
+	overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open sans";
+}
+
+.initial {
+  //display: none;
+  width: 100%;
+  height: 100vh;
+	@include wide-mobile {
+		height: 100vh;
+	}
+}
+
+.header {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  //flex-direction: column;
+  @include wide-mobile {
+		height: 35%;
+    flex-direction: row;
+  }
+  
+  &__half {
+    //width: 100%;
+    //height: 50%;
+		width: 50%;
+    height: 100%;
+    padding-left: 2%;
+    line-height: 1;
+    flex-direction: column;
+    @include flex(center, start);
+    font-size: .75rem;
+    cursor: pointer;
+    @include wide-mobile {
+      width: 50%;
+      height: 100%;
+    }
+  }
+  
+  &__website {
+    background-color: $yellow;
+  }
+  
+  &__store {
+    background-color: black;
+    
+    h1, h3 {
+      color: white;
+    }
+  }
+  
+  h1 {
+    font-style: italic;
+    font-weight:800;
+  }
+  
+  h3 {
+    font-weight: 400;
+  }
+}
+
+.initial__content {
+  width: 100%;
+  height: 80%;
+  padding: 2% 0;
+  display: flex;
+  flex-direction: column;
+	@include wide-mobile {
+		height: 65%;
+	}
+  @include tablet {
+    flex-direction: row;
+  }
+  
+  &--half {
+		width: 100%;
+		height: 50%;
+    @include flex(center, center);
+		@include tablet {
+			width: 50%;
+			height: 100%
+		}
+  }
+  
+  &--image {
+    
+    img {
+			max-height: 100%;
+      max-width: 100%;
+			height: 100;
+    }
+  }
+
+  &--text {
+    flex-direction: column;
+    padding: 0 10%;
+		margin-bottom: 2%;
+    font-size: .68rem;
+		@include wide-mobile {
+			font-size: .75rem;
+			padding: 0 10%;
+			margin: 0;
+		}
+    h1 {
+      font-style: italic;
+      align-self: start;
+    }
+  }
+}
+
+.website {
+  //display: none;
+  width: 100%;
+  height: 100vh;
+  padding: 2% 0;
+  background-image: url("http://www.travelcaffeine.com/wp-content/uploads/2017/09/laguna-beach-california-sunset-heisler-park-rocks-nikon-d850.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;  
+  position: relative; 
+  @include tablet {
+    padding: 2% 4%;
+  }
+}
+
+nav {
+  //width: 100%;
+
+  position: relative;
+  @include flex(space-between, center);
+  flex-wrap: wrap;
+  @include tablet {
+    @include flex(center, center); 
+    flex-wrap: nowrap;
+  }
+  img {
+    margin-left: 4%;
+    @include tablet {
+      padding: 0;
+    }
+  }
+}
+
+.icon {
+  display: block;
+  margin-right: 4%;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  @include tablet {
+    margin-right: 0;
+    display: none;
+  }
+}
+
+.navList {
+  width: 100%;
+  display: none;
+  @include tablet {
+    @include flex(center, center);
+  }
+  
+  li {
+		user-select: none;
+    @include flex(center,center);
+    list-style-type: none;
+    height: 25%;
+    border-top: 1px solid $yellow;
+    @include tablet {
+      display: block;
+      height: auto;
+      margin: 0 2%;
+      border-top: 0;
+      border-bottom: 1px solid transparent;
+      transition: border .3s linear;
+    }
+    
+    &:last-of-type {
+      border-bottom: 1px solid $yellow;
+      @include tablet {
+        border-bottom: 1px solid transparent;
+      }
+    }
+    
+    &:hover {
+      @include tablet {
+        border-bottom: 1px solid white;
+      }
+    }
+    
+    
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.flex {
+  background-color: rgba(0,0,0, 0.7);
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: calc(2% + 60px);
+  @include tablet {
+    background-color: transparent;
+    height: auto;
+    flex-direction: row;
+    position: relative;
+    top: 0;
+  }
+}
+
+.banner {
+	user-select: none;
+  margin: 10% auto 2% auto;
+  text-align: center;
+	@include wide-mobile {
+		margin: 6% auto;
+	}
+  @include tablet {
+    margin: 4% auto;
+  }
+}
+
+.bannerText {
+  display: inline-block;
+  text-align: center;
+  background-color: black;
+  padding-right: 5px;
+  text-transform: uppercase;
+  font-size: .8rem;
+  border: 3px solid $yellow;
+  color: white;
+  font-weight: 200;
+  @include wide-mobile {
+    font-size: 1.3rem;
+  }
+  @include tablet {
+    font-size: 1.7rem;
+  }
+  
+  span {
+    padding: 0 5px;
+    color: black;
+    background-color: $yellow;
+    font-weight: 700;
+  }
+}
+
+.website__content {
+	width: 100%;
+  margin-top: 10px;
+  display: flex;
+	flex-direction: column;
+	@include wide-mobile {
+		margin-top: 50px;
+		flex-direction: row;
+	}
+
+  &--half {
+    width: 100%;
+    height: auto;
+		padding: 0 15%;
+    @include flex(center, center);
+		@include wide-mobile {
+			padding: 0;
+			width: 50%;
+		}
+  }
+  
+  &--image {
+    max-height: 100%;
+    max-width: 100%;
+    user-select: none;
+    img {
+			max-height: 100%;
+      max-width: 100%;
+    }
+  }
+  
+  &--text {
+    flex-direction: column;
+    color: white;
+
+		//padding: 0 18%;
+    
+    h1 {
+      font-family: "Allerta Stencil";
+      color: white;
+			font-size: 3.5rem;
+			@include wide-mobile {
+				font-size: 5rem;
+			}
+    }
+		
+		p {
+			font-size: 1rem;
+			text-align: justify;
+		}
+  }
+}
+
+.website, .initial {
+  //display: none;
+}
+
+.products {
+  width: 100%;
+  height: 100%;
+  margin-top: 10%;
+}
+
+.slider {
+  width: 100%;
+  height: 37%;
+  display: flex;
+  //flex-direction: column;
+  position: relative;
+  @include wide-mobile {
+    flex-direction: row;
+  }
+  
+  &__camera {
+    position: absolute;
+    max-height: 100%;
+    left: 50%;
+    top: -50%;
+    transform: translateX(-50%);
+  }
+  
+  &__half {
+    height: 50%;
+    width: 100%;
+    height: 100%;
+    width: 50%;
+    @include wide-mobile {
+      height: 100%;
+      width: 50%;
+    }
+  }
+  
+  &__image {
+    border-top: 5px solid $yellow;
+    background-image: url("https://digital-photography-school.com/wp-content/uploads/flickr/8705867109_46d0f4dc0b_z.jpg");
+    background-position: center;
+    background-size: cover;
+    @include wide-mobile {
+      background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Sydney_Harbour_Bridge_night.jpg/1280px-Sydney_Harbour_Bridge_night.jpg");
+    }
+  }
+  
+  &__info {
+    display: flex;
+    border-top: 5px solid $turquoise;
+    background-color: rgba(0,0,0, .8);
+    color: white;
+    padding: 0 4% 0 8%;
+    @include flex(center, center);
+    flex-direction: column;
+    @include desktop {
+      padding: 0 8%;
+    }
+    
+    &--name {
+      padding-left: 15%;
+      align-self: start;
+      font-family: "Allerta Stencil";
+    }
+    
+    &--description {
+      @include wide-mobile {
+        font-size: .65rem;
+      }
+      @include tablet {
+        font-size: .8rem;
+      }
+      @include desktop {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.slideNav {
+  width: 100%;
+  height: 7%;
+  display: flex;
+  
+  &__cameras {
+    width: 100%;
+    @include flex(center,center);
+  }
+}
+
+.camera {
+  @include flex(center,center);
+  height: 100%;
+  margin: 0 .5px;
+  padding: 0 7px;
+  font-size: .65rem;
+  font-family: "Stardos Stencil";
+  font-weight: 800;
+  //font-size: .9rem;
+  cursor: pointer;
+  @include wide-mobile {
+    padding: 0 7px;
+    margin: 0 .7px;
+    font-size: .8rem;
+  }
+  @include tablet {
+    margin: 0 2px;
+    padding: 0 10px;
+    font-size: 1rem;
+  }
+  @include desktop {
+    font-size: 1.2rem;
+  }
+  
+  &:first-of-type {
+    background-color: $yellow;
+  }
+}
+
+.visible {
+  opacity: 1;
+  transition: opacity .5s linear;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity .5s linear;
+}
+
+.products__lenses {
+  width: 100%;
+  height: 70%;
+  margin-top: 10%;
+  display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	
+  &--image {
+		height: 250px;
+    grid-column: 1/5;
+		grid-row: 1;
+    border-top: 5px solid $turquoise;
+    background: url("https://iceland-photo-tours.com/wp-content/uploads/2016/05/Pictures-of-Waterfalls-in-Iceland02.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+		@include tablet {
+			height: auto;
+			grid-column: 1/3;
+		}
+		
+		img {
+			//max-width: 100%;
+			max-height: 100%;
+			@include tablet {
+				max-width: auto;
+				max-height: 100%;
+			}
+		}
+	}
+
+}
+
+.lens img {
+	width: 60%;
+}
+
+.products__lenses--one {
+  grid-column: 1/5;
+	grid-row: 2;
+  border-top: 5px solid $yellow;
+  background-color: $turquoise;
+  position: relative;
+	@include tablet {
+
+		grid-column: 3/5;
+		grid-row: 1;
+	}
+
+  img {
+    position: realtive;
+    //top: -15%;
+    transform: rotate(180deg) translate(-30%, 25%);
+  }
+
+  h3, p {
+    padding: 0 5% 0 15%;
+    color: white;
+  }
+
+  p {
+    font-size: .9rem;
+  }
+}
+
+.products__lenses--two, .products__lenses--three {
+  height: 100%;
+  background-color: $yellow;
+  padding: 10%;
+  @include flex(center, center);
+  flex-direction: column;
+	@include wide-mobile {
+		grid-row: 3;
+	}
+	@include tablet {
+		grid-row: 2;
+	}
+  img {
+    margin-bottom: 10%;
+  }
+}
+
+.products__lenses--two {
+	grid-column: 1/5;
+	@include wide-mobile {
+		grid-column: 1/3;
+	}
+	@include tablet {
+		grid-column: 1;
+	}
+}
+
+.products__lenses--three {
+	grid-column: 1/5;
+  background-color: white;
+	@include wide-mobile {
+		grid-column: 3/5;
+	}
+	@include tablet {
+		grid-column: 2;
+	}
+}
+
+.products__lenses--four {
+  padding: 2%;
+  grid-column: 1/5;
+  background-image: url("https://www.thephotoargus.com/wp-content/uploads/2015/10/Black-and-White-Portrait-3.jpg");
+  background-position: center;
+  background-size: cover;
+  @include flex(space-between, flex-end);
+  color: white;
+	@include tablet {
+		grid-column: 3/5;
+	}
+  
+  .description {
+    padding-right: 40%;
+    font-size: .8rem;
+  }
+  
+  img {
+    width: 30%;
+    transform: rotate(90deg);
+  }
+}

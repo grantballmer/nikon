@@ -1,0 +1,468 @@
+html, body {
+  height: 100%;
+  overflow-x: hidden; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open sans"; }
+
+.initial {
+  width: 100%;
+  height: 100vh; }
+  @media (min-width: 550px) {
+    .initial {
+      height: 100vh; } }
+
+.header {
+  width: 100%;
+  height: 20%;
+  display: flex; }
+  @media (min-width: 550px) {
+    .header {
+      height: 35%;
+      flex-direction: row; } }
+  .header__half {
+    width: 50%;
+    height: 100%;
+    padding-left: 2%;
+    line-height: 1;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    font-size: .75rem;
+    cursor: pointer; }
+    @media (min-width: 550px) {
+      .header__half {
+        width: 50%;
+        height: 100%; } }
+  .header__website {
+    background-color: #FFDE00; }
+  .header__store {
+    background-color: black; }
+    .header__store h1, .header__store h3 {
+      color: white; }
+  .header h1 {
+    font-style: italic;
+    font-weight: 800; }
+  .header h3 {
+    font-weight: 400; }
+
+.initial__content {
+  width: 100%;
+  height: 80%;
+  padding: 2% 0;
+  display: flex;
+  flex-direction: column; }
+  @media (min-width: 550px) {
+    .initial__content {
+      height: 65%; } }
+  @media (min-width: 812px) {
+    .initial__content {
+      flex-direction: row; } }
+  .initial__content--half {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    @media (min-width: 812px) {
+      .initial__content--half {
+        width: 50%;
+        height: 100%; } }
+  .initial__content--image img {
+    max-height: 100%;
+    max-width: 100%;
+    height: 100; }
+  .initial__content--text {
+    flex-direction: column;
+    padding: 0 10%;
+    margin-bottom: 2%;
+    font-size: .68rem; }
+    @media (min-width: 550px) {
+      .initial__content--text {
+        font-size: .75rem;
+        padding: 0 10%;
+        margin: 0; } }
+    .initial__content--text h1 {
+      font-style: italic;
+      align-self: start; }
+
+.website {
+  width: 100%;
+  height: 100vh;
+  padding: 2% 0;
+  background-image: url("http://www.travelcaffeine.com/wp-content/uploads/2017/09/laguna-beach-california-sunset-heisler-park-rocks-nikon-d850.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative; }
+  @media (min-width: 812px) {
+    .website {
+      padding: 2% 4%; } }
+
+nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; }
+  @media (min-width: 812px) {
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap; } }
+  nav img {
+    margin-left: 4%; }
+    @media (min-width: 812px) {
+      nav img {
+        padding: 0; } }
+
+.icon {
+  display: block;
+  margin-right: 4%;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer; }
+  @media (min-width: 812px) {
+    .icon {
+      margin-right: 0;
+      display: none; } }
+
+.navList {
+  width: 100%;
+  display: none; }
+  @media (min-width: 812px) {
+    .navList {
+      display: flex;
+      justify-content: center;
+      align-items: center; } }
+  .navList li {
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    height: 25%;
+    border-top: 1px solid #FFDE00; }
+    @media (min-width: 812px) {
+      .navList li {
+        display: block;
+        height: auto;
+        margin: 0 2%;
+        border-top: 0;
+        border-bottom: 1px solid transparent;
+        transition: border .3s linear; } }
+    .navList li:last-of-type {
+      border-bottom: 1px solid #FFDE00; }
+      @media (min-width: 812px) {
+        .navList li:last-of-type {
+          border-bottom: 1px solid transparent; } }
+    @media (min-width: 812px) {
+      .navList li:hover {
+        border-bottom: 1px solid white; } }
+  .navList a {
+    color: white;
+    text-decoration: none; }
+
+.flex {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: calc(2% + 60px); }
+  @media (min-width: 812px) {
+    .flex {
+      background-color: transparent;
+      height: auto;
+      flex-direction: row;
+      position: relative;
+      top: 0; } }
+
+.banner {
+  user-select: none;
+  margin: 10% auto 2% auto;
+  text-align: center; }
+  @media (min-width: 550px) {
+    .banner {
+      margin: 6% auto; } }
+  @media (min-width: 812px) {
+    .banner {
+      margin: 4% auto; } }
+
+.bannerText {
+  display: inline-block;
+  text-align: center;
+  background-color: black;
+  padding-right: 5px;
+  text-transform: uppercase;
+  font-size: .8rem;
+  border: 3px solid #FFDE00;
+  color: white;
+  font-weight: 200; }
+  @media (min-width: 550px) {
+    .bannerText {
+      font-size: 1.3rem; } }
+  @media (min-width: 812px) {
+    .bannerText {
+      font-size: 1.7rem; } }
+  .bannerText span {
+    padding: 0 5px;
+    color: black;
+    background-color: #FFDE00;
+    font-weight: 700; }
+
+.website__content {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column; }
+  @media (min-width: 550px) {
+    .website__content {
+      margin-top: 50px;
+      flex-direction: row; } }
+  .website__content--half {
+    width: 100%;
+    height: auto;
+    padding: 0 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    @media (min-width: 550px) {
+      .website__content--half {
+        padding: 0;
+        width: 50%; } }
+  .website__content--image {
+    max-height: 100%;
+    max-width: 100%;
+    user-select: none; }
+    .website__content--image img {
+      max-height: 100%;
+      max-width: 100%; }
+  .website__content--text {
+    flex-direction: column;
+    color: white; }
+    .website__content--text h1 {
+      font-family: "Allerta Stencil";
+      color: white;
+      font-size: 3.5rem; }
+      @media (min-width: 550px) {
+        .website__content--text h1 {
+          font-size: 5rem; } }
+    .website__content--text p {
+      font-size: 1rem;
+      text-align: justify; }
+
+.products {
+  width: 100%;
+  height: 100%;
+  margin-top: 10%; }
+
+.slider {
+  width: 100%;
+  height: 37%;
+  display: flex;
+  position: relative; }
+  @media (min-width: 550px) {
+    .slider {
+      flex-direction: row; } }
+  .slider__camera {
+    position: absolute;
+    max-height: 100%;
+    left: 50%;
+    top: -50%;
+    transform: translateX(-50%); }
+  .slider__half {
+    height: 50%;
+    width: 100%;
+    height: 100%;
+    width: 50%; }
+    @media (min-width: 550px) {
+      .slider__half {
+        height: 100%;
+        width: 50%; } }
+  .slider__image {
+    border-top: 5px solid #FFDE00;
+    background-image: url("https://digital-photography-school.com/wp-content/uploads/flickr/8705867109_46d0f4dc0b_z.jpg");
+    background-position: center;
+    background-size: cover; }
+    @media (min-width: 550px) {
+      .slider__image {
+        background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Sydney_Harbour_Bridge_night.jpg/1280px-Sydney_Harbour_Bridge_night.jpg"); } }
+  .slider__info {
+    display: flex;
+    border-top: 5px solid #2ad0d5;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0 4% 0 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    @media (min-width: 1024px) {
+      .slider__info {
+        padding: 0 8%; } }
+    .slider__info--name {
+      padding-left: 15%;
+      align-self: start;
+      font-family: "Allerta Stencil"; }
+    @media (min-width: 550px) {
+      .slider__info--description {
+        font-size: .65rem; } }
+    @media (min-width: 812px) {
+      .slider__info--description {
+        font-size: .8rem; } }
+    @media (min-width: 1024px) {
+      .slider__info--description {
+        font-size: 1rem; } }
+
+.slideNav {
+  width: 100%;
+  height: 7%;
+  display: flex; }
+  .slideNav__cameras {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+
+.camera {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0 .5px;
+  padding: 0 7px;
+  font-size: .65rem;
+  font-family: "Stardos Stencil";
+  font-weight: 800;
+  cursor: pointer; }
+  @media (min-width: 550px) {
+    .camera {
+      padding: 0 7px;
+      margin: 0 .7px;
+      font-size: .8rem; } }
+  @media (min-width: 812px) {
+    .camera {
+      margin: 0 2px;
+      padding: 0 10px;
+      font-size: 1rem; } }
+  @media (min-width: 1024px) {
+    .camera {
+      font-size: 1.2rem; } }
+  .camera:first-of-type {
+    background-color: #FFDE00; }
+
+.visible {
+  opacity: 1;
+  transition: opacity .5s linear; }
+
+.hidden {
+  opacity: 0;
+  transition: opacity .5s linear; }
+
+.products__lenses {
+  width: 100%;
+  height: 70%;
+  margin-top: 10%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); }
+  .products__lenses--image {
+    height: 250px;
+    grid-column: 1/5;
+    grid-row: 1;
+    border-top: 5px solid #2ad0d5;
+    background: url("https://iceland-photo-tours.com/wp-content/uploads/2016/05/Pictures-of-Waterfalls-in-Iceland02.jpg") no-repeat;
+    background-size: cover;
+    background-position: center; }
+    @media (min-width: 812px) {
+      .products__lenses--image {
+        height: auto;
+        grid-column: 1/3; } }
+    .products__lenses--image img {
+      max-height: 100%; }
+      @media (min-width: 812px) {
+        .products__lenses--image img {
+          max-width: auto;
+          max-height: 100%; } }
+
+.lens img {
+  width: 60%; }
+
+.products__lenses--one {
+  grid-column: 1/5;
+  grid-row: 2;
+  border-top: 5px solid #FFDE00;
+  background-color: #2ad0d5;
+  position: relative; }
+  @media (min-width: 812px) {
+    .products__lenses--one {
+      grid-column: 3/5;
+      grid-row: 1; } }
+  .products__lenses--one img {
+    position: realtive;
+    transform: rotate(180deg) translate(-30%, 25%); }
+  .products__lenses--one h3, .products__lenses--one p {
+    padding: 0 5% 0 15%;
+    color: white; }
+  .products__lenses--one p {
+    font-size: .9rem; }
+
+.products__lenses--two, .products__lenses--three {
+  height: 100%;
+  background-color: #FFDE00;
+  padding: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+  @media (min-width: 550px) {
+    .products__lenses--two, .products__lenses--three {
+      grid-row: 3; } }
+  @media (min-width: 812px) {
+    .products__lenses--two, .products__lenses--three {
+      grid-row: 2; } }
+  .products__lenses--two img, .products__lenses--three img {
+    margin-bottom: 10%; }
+
+.products__lenses--two {
+  grid-column: 1/5; }
+  @media (min-width: 550px) {
+    .products__lenses--two {
+      grid-column: 1/3; } }
+  @media (min-width: 812px) {
+    .products__lenses--two {
+      grid-column: 1; } }
+
+.products__lenses--three {
+  grid-column: 1/5;
+  background-color: white; }
+  @media (min-width: 550px) {
+    .products__lenses--three {
+      grid-column: 3/5; } }
+  @media (min-width: 812px) {
+    .products__lenses--three {
+      grid-column: 2; } }
+
+.products__lenses--four {
+  padding: 2%;
+  grid-column: 1/5;
+  background-image: url("https://www.thephotoargus.com/wp-content/uploads/2015/10/Black-and-White-Portrait-3.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: white; }
+  @media (min-width: 812px) {
+    .products__lenses--four {
+      grid-column: 3/5; } }
+  .products__lenses--four .description {
+    padding-right: 40%;
+    font-size: .8rem; }
+  .products__lenses--four img {
+    width: 30%;
+    transform: rotate(90deg); }
