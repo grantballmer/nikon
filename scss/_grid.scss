@@ -1,0 +1,128 @@
+.grid {
+    width: 100%;
+    padding: 3% 8%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+    @include wide-mobile {
+        padding: 3%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include desktop {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__box {
+        height: 250px;
+        background-color: $light-grey;
+        position: relative;
+        cursor: pointer;
+        @include tablet {
+            height: 300px;
+        }
+        
+        &:after {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            content: "";
+            background-color: rgba(0,0,0, 0.2);
+            z-index: -1;
+        }
+        
+        &:hover:after {
+            z-index: 2;
+        }
+
+        &:before {
+            @include flex(center, center);
+            width: 15%;
+            height: 10%;
+            position: relative;
+            top: 0;
+            left: 10%;
+            content: "";
+            text-align: center;
+            color: white;
+            background-color: black;
+            font-size: 1.6rem;
+        
+        }
+        
+        &--pro:before {
+            content: "PRO";
+        }
+
+        &--amateur:before {
+            width: 33%;
+            content: "Amateur";
+            background-color: $dark-grey;
+            @include wide-mobile {
+                width: 36%;
+            }
+            @include tablet {
+                width: 22%;
+            }
+        }  
+        
+        &--beginner:before {
+            width: 30%;
+            content: "Beginner";
+            background-color: $darker-light-grey;
+            @include wide-mobile {
+                width: 30%;
+            }
+            @include tablet {
+                width: 25%;
+            }
+        }  
+    }
+
+    &__box--image {
+        display: block;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        margin: 2% auto;
+        max-width: 63%;
+        @include tablet {
+            max-width: 60%;
+        }
+    }
+
+    &__box--name {
+        position: absolute;
+        top: 85%;
+        left: 10%;
+        // margin-left: 10%;
+        font-size: 1.8rem;
+    }
+}
+  
+.grid__lens {
+
+&:before {
+    display: none;
+}
+
+&--rotate {
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+
+&--rotate45 {
+    transform: translate(-50%, -50%) rotate(-60deg);
+}
+
+.grid__box--image {
+    top: 40%;
+    max-width: 50%;
+}
+
+.grid__box--name {
+    font-size: 1.4rem;
+}
+}

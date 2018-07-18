@@ -1,0 +1,109 @@
+.cameraModels {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  //flex-direction: column;
+  position: relative;
+  @include wide-mobile {
+    flex-direction: row;
+  }
+  
+  &__camera {
+    position: absolute;
+    max-height: 45%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    @include wide-mobile {
+        max-height: 75%;
+    }
+  }
+  
+  &__half {
+    height: 50%;
+    width: 100%;
+    height: 100%;
+    width: 50%;
+    @include wide-mobile {
+      height: 100%;
+      width: 50%;
+    }
+  }
+  
+  &__image {
+    border-top: 5px solid $yellow;
+    background-image: url("https://digital-photography-school.com/wp-content/uploads/flickr/8705867109_46d0f4dc0b_z.jpg");
+    background-position: center;
+    background-size: cover;
+    @include wide-mobile {
+      background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Sydney_Harbour_Bridge_night.jpg/1280px-Sydney_Harbour_Bridge_night.jpg");
+    }
+  }
+  
+  &__info {
+    display: flex;
+    border-top: 5px solid $turquoise;
+    background-color: rgba(0,0,0, .8);
+    color: white;
+    padding: 0 2% 0 25%;
+    @include flex(center, center);
+    flex-direction: column;
+    @include wide-mobile {
+        padding: 0 10% 0 20%;
+    }
+    @include tablet {
+        padding: 0 14%;
+    }
+    @include desktop {
+      padding: 0 12%;
+    }
+    
+    &--name {
+      font-family: "Stardos Stencil";
+      font-size: 2.6rem;
+      align-self: start;
+    }
+    
+    &--description {
+        font-size: .85rem;
+      @include wide-mobile {
+        font-size: 1rem;
+      }
+      @include tablet {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+.cameraModels__nav {
+  width: 100%;
+  height: 40px;
+  @include flex(center,center);
+}
+
+.yellowBKG {
+  background-color: $yellow;
+}
+
+.camera {
+  @include flex(center,center);
+  height: 100%;
+  width: 70px;
+  margin: 0 .5px;
+  padding: 0 7px;
+  font-size: 1.1rem;
+  font-family: "Stardos Stencil";
+  font-weight: 800;
+  cursor: pointer;
+  @include wide-mobile {
+    padding: 0 7px;
+    margin: 0 .7px;
+    font-size: 1.4rem;
+  }
+  @include tablet {
+    margin: 0 2px;
+    padding: 0 10px;
+    font-size: 1.8rem;
+  }
+}

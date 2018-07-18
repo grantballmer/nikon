@@ -1,0 +1,94 @@
+$border-curve: 25px;
+$yellow: #FFDE00;
+$turquoise: #2ad0d5;
+$light-grey: #EAEAEA;
+$darker-light-grey: #BEBEBE;
+$dark-grey: #5d5d5d;
+
+.camerasPage, .lensPage {
+    width: 100%;
+    overflow: hidden;
+    
+    .menu {
+      margin-top: 10px;
+    }
+    
+    .banner {
+        margin: -1%;
+        @include wide-mobile {
+        	margin-top: 0%;
+        }
+        @include tablet {
+            margin-top: 2%;
+        }
+    }
+}
+
+.top {
+  width: 100%;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+  //background-image: url("https://photofocus.com/wp-content/uploads/2016/11/Grand-Canyon-Vista-1-copy.jpg");
+  @include wide-mobile {
+    height: 200px;
+  }
+  @include tablet {
+    height: 300px;
+  }
+  
+  &__camera {
+    background-image: url("https://photofocus.com/wp-content/uploads/2016/11/Grand-Canyon-Vista-1-copy.jpg");
+  }
+  
+  &__lens {
+    //background-image: url("http://i.dailymail.co.uk/i/pix/2012/05/29/article-2151501-1358E3EC000005DC-413_964x638.jpg");
+    background-image: url("https://iso.500px.com/wp-content/uploads/2017/12/500px_blog_our_favorite_photos_2017_part3-1500x1000.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.btmCamera {
+  max-height: 100%;
+  position: absolute;
+  bottom: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0,0,0, 0.5);
+  z-index: 3;
+  justify-content: center;
+  align-items: center;
+  
+  img {
+    max-width: 75%;
+    @include wide-mobile {
+      max-height: 75%;
+    }
+    //background-color: white;
+  }
+}
+
+.flex {
+  background-color: rgba(0,0,0, 0.7);
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: calc(2% + 60px);
+  @include tablet {
+    background-color: transparent;
+    height: auto;
+    flex-direction: row;
+    position: relative;
+    top: 0;
+  }
+}

@@ -1,14 +1,13 @@
-html, body {
-  height: 100%;
-  overflow-x: hidden;
-}
-
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: "Open sans";
+}
+
+html {
+  font-size: 62.5%;
 }
 
 .initial {
@@ -57,8 +56,8 @@ html, body {
           justify-content: center;
   -webkit-box-align: start;
       -ms-flex-align: start;
-          align-items: start;
-  font-size: .75rem;
+          align-items: flex-start;
+  font-size: .9rem;
   cursor: pointer;
 }
 
@@ -66,6 +65,13 @@ html, body {
   .header__half {
     width: 50%;
     height: 100%;
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 812px) {
+  .header__half {
+    font-size: 1.8rem;
   }
 }
 
@@ -90,7 +96,7 @@ html, body {
   font-weight: 400;
 }
 
-.initial__content {
+.d850 {
   width: 100%;
   height: 80%;
   padding: 2% 0;
@@ -104,13 +110,13 @@ html, body {
 }
 
 @media (min-width: 550px) {
-  .initial__content {
+  .d850 {
     height: 65%;
   }
 }
 
 @media (min-width: 812px) {
-  .initial__content {
+  .d850 {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -118,7 +124,7 @@ html, body {
   }
 }
 
-.initial__content--half {
+.d850__half {
   width: 100%;
   height: 50%;
   display: -webkit-box;
@@ -133,62 +139,50 @@ html, body {
 }
 
 @media (min-width: 812px) {
-  .initial__content--half {
+  .d850__half {
     width: 50%;
     height: 100%;
   }
 }
 
-.initial__content--image img {
+.d850__image img {
   max-height: 100%;
   max-width: 100%;
   height: 100;
 }
 
-.initial__content--text {
+.d850__text {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 0 10%;
   margin-bottom: 2%;
-  font-size: .65rem;
+  font-size: .9rem;
 }
 
 @media (min-width: 550px) {
-  .initial__content--text {
-    font-size: .85rem;
-    padding: 0 10%;
+  .d850__text {
+    font-size: 1.2rem;
     margin: 0;
   }
 }
 
-.initial__content--text h1 {
+@media (min-width: 1024px) {
+  .d850__text {
+    font-size: 1.5rem;
+  }
+}
+
+.d850__text h1 {
   font-style: italic;
   -ms-flex-item-align: start;
       -ms-grid-row-align: start;
       align-self: start;
 }
 
-.website {
+.menu {
   width: 100%;
-  height: 100vh;
-  padding: 2% 0;
-  background-image: url("https://hdwallsource.com/img/2014/10/ocean-sunset-35994-36819-hd-wallpapers.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  position: relative;
-  overflow-y: hidden;
-}
-
-@media (min-width: 812px) {
-  .website {
-    padding: 2% 4%;
-  }
-}
-
-nav {
-  height: 10%;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -204,7 +198,7 @@ nav {
 }
 
 @media (min-width: 812px) {
-  nav {
+  .menu {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -219,21 +213,17 @@ nav {
   }
 }
 
-nav img {
-  height: 50px;
-  width: 50px;
+.menu img {
   margin-left: 4%;
 }
 
 @media (min-width: 812px) {
-  nav img {
-    height: 75px;
-    width: 75px;
+  .menu img {
     padding: 0;
   }
 }
 
-.icon {
+.menu__icon {
   display: block;
   margin-right: 4%;
   color: white;
@@ -242,19 +232,19 @@ nav img {
 }
 
 @media (min-width: 812px) {
-  .icon {
+  .menu__icon {
     margin-right: 0;
     display: none;
   }
 }
 
-.navList {
+.menu__list {
   width: 100%;
   display: none;
 }
 
 @media (min-width: 812px) {
-  .navList {
+  .menu__list {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -267,7 +257,7 @@ nav img {
   }
 }
 
-.navList li {
+.menu__list li {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -287,34 +277,35 @@ nav img {
 }
 
 @media (min-width: 812px) {
-  .navList li {
+  .menu__list li {
     display: block;
     height: auto;
     margin: 0 2%;
     border-top: 0;
+    font-size: 1.7rem;
     border-bottom: 1px solid transparent;
     -webkit-transition: border .3s linear;
     transition: border .3s linear;
   }
 }
 
-.navList li:last-of-type {
+.menu__list li:last-of-type {
   border-bottom: 1px solid #FFDE00;
 }
 
 @media (min-width: 812px) {
-  .navList li:last-of-type {
+  .menu__list li:last-of-type {
     border-bottom: 1px solid transparent;
   }
 }
 
 @media (min-width: 812px) {
-  .navList li:hover {
+  .menu__list li:hover {
     border-bottom: 1px solid white;
   }
 }
 
-.navList a {
+.menu__list a {
   color: white;
   text-decoration: none;
 }
@@ -363,7 +354,7 @@ nav img {
 
 @media (min-width: 812px) {
   .banner {
-    margin: 1% auto;
+    margin: 4% auto;
   }
 }
 
@@ -381,13 +372,13 @@ nav img {
 
 @media (min-width: 550px) {
   .bannerText {
-    font-size: 1.3rem;
+    font-size: 2rem;
   }
 }
 
 @media (min-width: 812px) {
   .bannerText {
-    font-size: 1.7rem;
+    font-size: 2.6rem;
   }
 }
 
@@ -398,10 +389,27 @@ nav img {
   font-weight: 700;
 }
 
-.website__content {
+.d850__info {
   width: 100%;
-  height: 60%;
-  margin-top: 10px;
+  height: 100vh;
+  overflow: hidden;
+  padding: 2% 0;
+  background-image: url("https://www.travelcaffeine.com/wp-content/uploads/2017/09/laguna-beach-california-sunset-heisler-park-rocks-nikon-d850.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+@media (min-width: 812px) {
+  .d850__info {
+    padding: 2% 4%;
+  }
+}
+
+.d850Content {
+  width: 100%;
+  height: 75%;
+  margin: 10px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -411,8 +419,9 @@ nav img {
           flex-direction: column;
 }
 
-@media (min-width: 550px) {
-  .website__content {
+@media (min-width: 812px) {
+  .d850Content {
+    height: 60%;
     margin-top: 50px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -421,10 +430,9 @@ nav img {
   }
 }
 
-.website__content--half {
+.d850Content__half {
   width: 100%;
-  height: auto;
-  padding: 0 15%;
+  height: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -436,90 +444,67 @@ nav img {
           align-items: center;
 }
 
-@media (min-width: 550px) {
-  .website__content--half {
-    padding: 0;
+@media (min-width: 812px) {
+  .d850Content__half {
+    height: 100%;
     width: 50%;
   }
 }
 
-.website__content--image {
-  height: 50%;
+.d850Content__image {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  height: 70%;
 }
 
-@media (min-width: 550px) {
-  .website__content--image {
+@media (min-width: 812px) {
+  .d850Content__image {
     height: 100%;
   }
 }
 
-.website__content--image img {
+.d850Content__image img {
   max-height: 100%;
+  max-width: 100%;
 }
 
-@media (min-width: 550px) {
-  .website__content--image img {
-    max-width: 100%;
-  }
-}
-
-.website__content--text {
+.d850Content__text {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0 5%;
   color: white;
+  padding: 0 10%;
 }
 
-@media (min-width: 812px) {
-  .website__content--text {
-    padding: 0 10%;
-  }
-}
-
-.website__content--text h1 {
+.d850Content__text h1 {
   font-family: "Allerta Stencil";
-  font-size: 4rem;
+  color: white;
+  font-size: 2.8rem;
 }
 
-@media (min-width: 812px) {
-  .website__content--text h1 {
-    font-size: 5rem;
+@media (min-width: 550px) {
+  .d850Content__text h1 {
+    font-size: 7rem;
   }
 }
 
-.website__content--text p {
-  font-size: .85rem;
-  font-weight: 500;
+.d850Content__text p {
+  font-size: 1.5rem;
   text-align: justify;
 }
 
 @media (min-width: 812px) {
-  .website__content--text p {
-    font-size: .95rem;
+  .d850Content__text p {
+    font-size: 2rem;
   }
 }
 
-@media (min-width: 1024px) {
-  .website__content--text p {
-    font-size: 1.1rem;
-  }
-}
-
-.products {
+.cameraModels {
   width: 100%;
-  height: 100%;
-  margin-top: 10%;
-}
-
-.slider {
-  width: 100%;
-  height: 37%;
+  height: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -527,7 +512,7 @@ nav img {
 }
 
 @media (min-width: 550px) {
-  .slider {
+  .cameraModels {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -535,26 +520,22 @@ nav img {
   }
 }
 
-.slider__camera {
+.cameraModels__camera {
   position: absolute;
-  max-height: 60%;
+  max-height: 45%;
   left: 50%;
-  top: -25%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
-@media (min-width: 812px) {
-  .slider__camera {
+@media (min-width: 550px) {
+  .cameraModels__camera {
     max-height: 75%;
   }
 }
 
-.slider__camera:not(:first-of-type) {
-  display: none;
-}
-
-.slider__half {
+.cameraModels__half {
   height: 50%;
   width: 100%;
   height: 100%;
@@ -562,13 +543,13 @@ nav img {
 }
 
 @media (min-width: 550px) {
-  .slider__half {
+  .cameraModels__half {
     height: 100%;
     width: 50%;
   }
 }
 
-.slider__image {
+.cameraModels__image {
   border-top: 5px solid #FFDE00;
   background-image: url("https://digital-photography-school.com/wp-content/uploads/flickr/8705867109_46d0f4dc0b_z.jpg");
   background-position: center;
@@ -576,19 +557,19 @@ nav img {
 }
 
 @media (min-width: 550px) {
-  .slider__image {
+  .cameraModels__image {
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Sydney_Harbour_Bridge_night.jpg/1280px-Sydney_Harbour_Bridge_night.jpg");
   }
 }
 
-.slider__info {
+.cameraModels__info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   border-top: 5px solid #2ad0d5;
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
-  padding: 0 4% 0 8%;
+  padding: 0 2% 0 25%;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -602,58 +583,51 @@ nav img {
           flex-direction: column;
 }
 
-@media (min-width: 1024px) {
-  .slider__info {
-    padding: 0 8%;
-  }
-}
-
-.slider__info--name {
-  padding-left: 25%;
-  -ms-flex-item-align: start;
-      -ms-grid-row-align: start;
-      align-self: start;
-  font-family: "Allerta Stencil";
-}
-
 @media (min-width: 550px) {
-  .slider__info--name {
-    padding-left: 10%;
-  }
-}
-
-.slider__info--description {
-  font-size: .65rem;
-}
-
-@media (min-width: 550px) {
-  .slider__info--description {
-    font-size: .7rem;
+  .cameraModels__info {
+    padding: 0 10% 0 20%;
   }
 }
 
 @media (min-width: 812px) {
-  .slider__info--description {
-    font-size: .8rem;
+  .cameraModels__info {
+    padding: 0 14%;
   }
 }
 
 @media (min-width: 1024px) {
-  .slider__info--description {
+  .cameraModels__info {
+    padding: 0 12%;
+  }
+}
+
+.cameraModels__info--name {
+  font-family: "Stardos Stencil";
+  font-size: 2.6rem;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+}
+
+.cameraModels__info--description {
+  font-size: .85rem;
+}
+
+@media (min-width: 550px) {
+  .cameraModels__info--description {
     font-size: 1rem;
   }
 }
 
-.slideNav {
-  width: 100%;
-  height: 7%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+@media (min-width: 812px) {
+  .cameraModels__info--description {
+    font-size: 1.2rem;
+  }
 }
 
-.slideNav__cameras {
+.cameraModels__nav {
   width: 100%;
+  height: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -663,6 +637,10 @@ nav img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.yellowBKG {
+  background-color: #FFDE00;
 }
 
 .camera {
@@ -676,9 +654,10 @@ nav img {
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
+  width: 70px;
   margin: 0 .5px;
   padding: 0 7px;
-  font-size: .65rem;
+  font-size: 1.1rem;
   font-family: "Stardos Stencil";
   font-weight: 800;
   cursor: pointer;
@@ -686,14 +665,23 @@ nav img {
 
 @media (min-width: 550px) {
   .camera {
-    padding: 0 15px;
-    margin: 0 2px;
-    font-size: 1.5rem;
+    padding: 0 7px;
+    margin: 0 .7px;
+    font-size: 1.4rem;
   }
 }
 
-.camera:first-of-type {
-  background-color: #FFDE00;
+@media (min-width: 812px) {
+  .camera {
+    margin: 0 2px;
+    padding: 0 10px;
+    font-size: 1.8rem;
+  }
+}
+
+.products {
+  width: 100%;
+  height: auto;
 }
 
 .visible {
@@ -708,9 +696,8 @@ nav img {
   transition: opacity .5s linear;
 }
 
-.products__lenses {
+.lenses {
   width: 100%;
-  height: 70%;
   margin-top: 10%;
   display: -ms-grid;
   display: grid;
@@ -718,7 +705,7 @@ nav img {
       grid-template-columns: repeat(4, 1fr);
 }
 
-.products__lenses--image {
+.lenses__image {
   height: 250px;
   -ms-grid-column: 1;
   -ms-grid-column-span: 4;
@@ -732,7 +719,7 @@ nav img {
 }
 
 @media (min-width: 812px) {
-  .products__lenses--image {
+  .lenses__image {
     height: auto;
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
@@ -740,22 +727,12 @@ nav img {
   }
 }
 
-.products__lenses--image img {
-  max-height: 100%;
+.lens {
+  height: 50%;
 }
 
-@media (min-width: 812px) {
-  .products__lenses--image img {
-    max-width: auto;
-    max-height: 100%;
-  }
-}
-
-.lens img {
-  width: 60%;
-}
-
-.products__lenses--one {
+.lenses__one {
+  height: 100%;
   -ms-grid-column: 1;
   -ms-grid-column-span: 4;
   grid-column: 1/5;
@@ -766,40 +743,59 @@ nav img {
   position: relative;
 }
 
+.lenses__one p {
+  font-size: 1.5rem;
+}
+
 @media (min-width: 812px) {
-  .products__lenses--one {
+  .lenses__one {
+    padding-bottom: 0;
     -ms-grid-column: 3;
     -ms-grid-column-span: 2;
     grid-column: 3/5;
     -ms-grid-row: 1;
     grid-row: 1;
   }
+  .lenses__one h3 {
+    font-size: 1.6rem;
+  }
+  .lenses__one p {
+    font-size: 1.3rem;
+  }
 }
 
-.products__lenses--one img {
-  position: relative;
-  -webkit-transform: rotate(180deg) translate(-30%, 25%);
-          transform: rotate(180deg) translate(-30%, 25%);
+.lenses__one img {
+  max-width: 60%;
+  -webkit-transform: rotate(180deg) translate(-35%, 45%);
+          transform: rotate(180deg) translate(-35%, 45%);
 }
 
-.products__lenses--one h3 {
-  margin-top: -15px;
+@media (min-width: 550px) {
+  .lenses__one img {
+    -webkit-transform: rotate(180deg) translate(-50%, 45%);
+            transform: rotate(180deg) translate(-50%, 45%);
+  }
 }
 
-.products__lenses--one h3, .products__lenses--one p {
+@media (min-width: 812px) {
+  .lenses__one img {
+    -webkit-transform: rotate(180deg) translate(-40%, 40%);
+            transform: rotate(180deg) translate(-40%, 40%);
+  }
+}
+
+.lenses__one h3, .lenses__one p {
   padding: 0 5% 0 15%;
   color: white;
+  -webkit-transform: translateY(-35px);
+          transform: translateY(-35px);
 }
 
-.products__lenses--one p {
-  font-size: .9rem;
-  margin-bottom: 12px;
-}
-
-.products__lenses--two, .products__lenses--three {
-  height: 100%;
+.lenses__two, .lenses__three {
+  height: 300px;
   background-color: #FFDE00;
-  padding: 10%;
+  padding: 0 10%;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -815,32 +811,53 @@ nav img {
           flex-direction: column;
 }
 
+.lenses__two h3, .lenses__three h3 {
+  width: 100%;
+  text-align: left;
+  font-size: 1.4rem;
+}
+
+.lenses__two p, .lenses__three p {
+  font-size: 1.2rem;
+}
+
 @media (min-width: 550px) {
-  .products__lenses--two, .products__lenses--three {
+  .lenses__two, .lenses__three {
+    height: 100%;
     -ms-grid-row: 3;
     grid-row: 3;
   }
 }
 
 @media (min-width: 812px) {
-  .products__lenses--two, .products__lenses--three {
+  .lenses__two, .lenses__three {
     -ms-grid-row: 2;
     grid-row: 2;
   }
 }
 
-.products__lenses--two img, .products__lenses--three img {
-  margin-bottom: 10%;
+.lenses__two img, .lenses__three img {
+  max-width: 75%;
+  max-height: 50%;
+  margin-bottom: 40px;
 }
 
-.products__lenses--two {
+@media (min-width: 550px) {
+  .lenses__two img, .lenses__three img {
+    max-width: 90%;
+    max-height: 26%;
+    margin-bottom: 40px;
+  }
+}
+
+.lenses__two {
   -ms-grid-column: 1;
   -ms-grid-column-span: 4;
   grid-column: 1/5;
 }
 
 @media (min-width: 550px) {
-  .products__lenses--two {
+  .lenses__two {
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
     grid-column: 1/3;
@@ -848,13 +865,13 @@ nav img {
 }
 
 @media (min-width: 812px) {
-  .products__lenses--two {
+  .lenses__two {
     -ms-grid-column: 1;
     grid-column: 1;
   }
 }
 
-.products__lenses--three {
+.lenses__three {
   -ms-grid-column: 1;
   -ms-grid-column-span: 4;
   grid-column: 1/5;
@@ -862,7 +879,7 @@ nav img {
 }
 
 @media (min-width: 550px) {
-  .products__lenses--three {
+  .lenses__three {
     -ms-grid-column: 3;
     -ms-grid-column-span: 2;
     grid-column: 3/5;
@@ -870,14 +887,15 @@ nav img {
 }
 
 @media (min-width: 812px) {
-  .products__lenses--three {
+  .lenses__three {
     -ms-grid-column: 2;
     grid-column: 2;
   }
 }
 
-.products__lenses--four {
-  padding: 2% .5% 2% 2%;
+.lenses__four {
+  height: 250px;
+  padding: 2%;
   -ms-grid-column: 1;
   -ms-grid-column-span: 4;
   grid-column: 1/5;
@@ -897,32 +915,300 @@ nav img {
 }
 
 @media (min-width: 812px) {
-  .products__lenses--four {
+  .lenses__four {
+    height: auto;
     -ms-grid-column: 3;
     -ms-grid-column-span: 2;
     grid-column: 3/5;
   }
 }
 
-.products__lenses--four .description {
-  padding-right: 40%;
-  font-size: .6rem;
+.lenses__four .description {
+  width: 40%;
+  font-size: 1.2rem;
 }
 
-@media (min-width: 550px) {
-  .products__lenses--four .description {
-    font-size: .8rem;
-  }
-}
-
-.products__lenses--four img {
-  width: 20%;
+.lenses__four img {
+  width: 30%;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
 
+.camerasPage, .lensPage {
+  width: 100%;
+  overflow: hidden;
+}
+
+.camerasPage .menu, .lensPage .menu {
+  margin-top: 10px;
+}
+
+.camerasPage .banner, .lensPage .banner {
+  margin: -1%;
+}
+
 @media (min-width: 550px) {
-  .products__lenses--four img {
+  .camerasPage .banner, .lensPage .banner {
+    margin-top: 0%;
+  }
+}
+
+@media (min-width: 812px) {
+  .camerasPage .banner, .lensPage .banner {
+    margin-top: 2%;
+  }
+}
+
+.top {
+  width: 100%;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 550px) {
+  .top {
+    height: 200px;
+  }
+}
+
+@media (min-width: 812px) {
+  .top {
+    height: 300px;
+  }
+}
+
+.top__camera {
+  background-image: url("https://photofocus.com/wp-content/uploads/2016/11/Grand-Canyon-Vista-1-copy.jpg");
+}
+
+.top__lens {
+  background-image: url("https://iso.500px.com/wp-content/uploads/2017/12/500px_blog_our_favorite_photos_2017_part3-1500x1000.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.btmCamera {
+  max-height: 100%;
+  position: absolute;
+  bottom: -50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.overlay img {
+  max-width: 75%;
+}
+
+@media (min-width: 550px) {
+  .overlay img {
+    max-height: 75%;
+  }
+}
+
+.flex {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: calc(2% + 60px);
+}
+
+@media (min-width: 812px) {
+  .flex {
+    background-color: transparent;
+    height: auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    position: relative;
+    top: 0;
+  }
+}
+
+.grid {
+  width: 100%;
+  padding: 3% 8%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
+  grid-gap: 10px;
+}
+
+@media (min-width: 550px) {
+  .grid {
+    padding: 3%;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.grid__box {
+  height: 250px;
+  background-color: #EAEAEA;
+  position: relative;
+  cursor: pointer;
+}
+
+@media (min-width: 812px) {
+  .grid__box {
+    height: 300px;
+  }
+}
+
+.grid__box:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: -1;
+}
+
+.grid__box:hover:after {
+  z-index: 2;
+}
+
+.grid__box:before {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 15%;
+  height: 10%;
+  position: relative;
+  top: 0;
+  left: 10%;
+  content: "";
+  text-align: center;
+  color: white;
+  background-color: black;
+  font-size: 1.6rem;
+}
+
+.grid__box--pro:before {
+  content: "PRO";
+}
+
+.grid__box--amateur:before {
+  width: 33%;
+  content: "Amateur";
+  background-color: #5d5d5d;
+}
+
+@media (min-width: 550px) {
+  .grid__box--amateur:before {
+    width: 36%;
+  }
+}
+
+@media (min-width: 812px) {
+  .grid__box--amateur:before {
+    width: 22%;
+  }
+}
+
+.grid__box--beginner:before {
+  width: 30%;
+  content: "Beginner";
+  background-color: #BEBEBE;
+}
+
+@media (min-width: 550px) {
+  .grid__box--beginner:before {
     width: 30%;
   }
+}
+
+@media (min-width: 812px) {
+  .grid__box--beginner:before {
+    width: 25%;
+  }
+}
+
+.grid__box--image {
+  display: block;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  margin: 2% auto;
+  max-width: 63%;
+}
+
+@media (min-width: 812px) {
+  .grid__box--image {
+    max-width: 60%;
+  }
+}
+
+.grid__box--name {
+  position: absolute;
+  top: 85%;
+  left: 10%;
+  font-size: 1.8rem;
+}
+
+.grid__lens:before {
+  display: none;
+}
+
+.grid__lens--rotate {
+  -webkit-transform: translate(-50%, -50%) rotate(180deg);
+          transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.grid__lens--rotate45 {
+  -webkit-transform: translate(-50%, -50%) rotate(-60deg);
+          transform: translate(-50%, -50%) rotate(-60deg);
+}
+
+.grid__lens .grid__box--image {
+  top: 40%;
+  max-width: 50%;
+}
+
+.grid__lens .grid__box--name {
+  font-size: 1.4rem;
 }

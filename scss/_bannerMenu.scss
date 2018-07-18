@@ -1,0 +1,132 @@
+.menu {
+  width: 100%;
+  position: relative;
+  @include flex(space-between, center);
+  flex-wrap: wrap;
+  @include tablet {
+      @include flex(center, center); 
+      flex-wrap: nowrap;
+  }
+  img {
+      margin-left: 4%;
+      @include tablet {
+        padding: 0;
+      }
+  }
+  
+  &__icon {
+    display: block;
+    margin-right: 4%;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    @include tablet {
+      margin-right: 0;
+      display: none;
+    }
+  }
+  
+  &__list {
+    width: 100%;
+    display: none;
+    @include tablet {
+        @include flex(center, center);
+    }
+    
+    li {
+        user-select: none;
+        @include flex(center,center);
+        list-style-type: none;
+        height: 25%;
+        border-top: 1px solid $yellow;
+        @include tablet {
+          display: block;
+          height: auto;
+          margin: 0 2%;
+          border-top: 0;
+          font-size: 1.7rem;
+          border-bottom: 1px solid transparent;
+          transition: border .3s linear;
+        }
+        
+        &:last-of-type {
+          border-bottom: 1px solid $yellow;
+          @include tablet {
+            border-bottom: 1px solid transparent;
+          }
+        }
+        
+        &:hover {
+          @include tablet {
+            border-bottom: 1px solid white;
+          }
+        }
+    }
+    
+    a {
+        color: white;
+        text-decoration: none;
+    }
+  }
+}
+
+.flex {
+  background-color: rgba(0,0,0, 0.7);
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: calc(2% + 60px);
+  @include tablet {
+    background-color: transparent;
+    height: auto;
+    flex-direction: row;
+    position: relative;
+    top: 0;
+  }
+}
+
+.banner {
+    user-select: none;
+    margin: 10% auto 2% auto;
+    text-align: center;
+    @include wide-mobile {
+    	margin: 6% auto;
+    }
+    @include tablet {
+        margin: 4% auto;
+    }
+    
+    // margin: -1%;
+    // @include wide-mobile {
+    // 	margin-top: 2%;
+    // }
+    // @include tablet {
+    //     margin-top: 3%;
+    // }
+}
+
+.bannerText {
+  display: inline-block;
+  text-align: center;
+  background-color: black;
+  padding-right: 5px;
+  text-transform: uppercase;
+  font-size: .8rem;
+  border: 3px solid $yellow;
+  color: white;
+  font-weight: 200;
+  @include wide-mobile {
+    font-size: 2rem;
+  }
+  @include tablet {
+    font-size: 2.6rem;
+  }
+  
+  span {
+    padding: 0 5px;
+    color: black;
+    background-color: $yellow;
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,50 @@
+$yellow: #FFDE00;
+$turquoise: #2ad0d5;
+
+$wide-mobile-width: 550px; 
+$tablet-width: 812px;
+$desktop-width: 1024px;
+$border-curve: 25px;
+
+@mixin wide-mobile {
+  @media (min-width: #{$wide-mobile-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open sans";
+}
+
+html {font-size: 62.5%;}
+
+@import "./_landing.scss";
+@import "./_bannerMenu.scss";
+@import "./_d850Info.scss";
+@import "./_cameraModels.scss";
+@import "./_products.scss";
+@import "./_lenses.scss";
+
+@import "./_cameras.scss";
+@import "./_grid.scss";
