@@ -1,9 +1,9 @@
 const gridBoxes = document.querySelectorAll('.grid__box');
 const overlay = document.querySelector('.overlay');
+const overlayImg = overlay.querySelector('.overlay__camera');
 
 function gridClickHandler() {
-    let gridImg = this.querySelector('img');
-    let overlayImg = overlay.querySelector('img');
+    const gridImg = this.querySelector('img');
     overlayImg.setAttribute('src', gridImg.src);
     
     if (gridImg.classList.contains('grid__lens--rotate')) {
@@ -22,4 +22,5 @@ gridBoxes.forEach(camera => camera.addEventListener('click', gridClickHandler));
 
 overlay.addEventListener('click', function() {
     this.style.display = 'none';
+    overlayImg.setAttribute('src', '');
 })

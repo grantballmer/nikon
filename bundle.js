@@ -1,7 +1,8 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-let overlay = require('./components/overlay');
-let cameraModels = require('./components/cameraModels');
-},{"./components/cameraModels":2,"./components/overlay":3}],2:[function(require,module,exports){
+let overlay = require('./scripts/overlay');
+let cameraModels = require('./scripts/cameraModels');
+let scroll = require('./scripts/scroll');
+},{"./scripts/cameraModels":2,"./scripts/overlay":3,"./scripts/scroll":4}],2:[function(require,module,exports){
 const cameras = document.querySelectorAll('.camera');
 const cameraModels = document.querySelector('.cameraModels');
 
@@ -52,10 +53,10 @@ cameras.forEach(camera => camera.addEventListener('click', camerasClickHandler))
 },{}],3:[function(require,module,exports){
 const gridBoxes = document.querySelectorAll('.grid__box');
 const overlay = document.querySelector('.overlay');
+const overlayImg = overlay.querySelector('.overlay__camera');
 
 function gridClickHandler() {
-    let gridImg = this.querySelector('img');
-    let overlayImg = overlay.querySelector('img');
+    const gridImg = this.querySelector('img');
     overlayImg.setAttribute('src', gridImg.src);
     
     if (gridImg.classList.contains('grid__lens--rotate')) {
@@ -74,5 +75,23 @@ gridBoxes.forEach(camera => camera.addEventListener('click', gridClickHandler));
 
 overlay.addEventListener('click', function() {
     this.style.display = 'none';
+    overlayImg.setAttribute('src', '');
 })
+},{}],4:[function(require,module,exports){
+//target the element to click and the element to scroll to 
+const websiteLink = document.querySelector('.header__website');
+const websiteStart = document.querySelector('.d850__info');
+
+const storeLink = document.querySelector('.header__store');
+const storeStart = document.querySelector('.camerasPage');
+
+function smoothScroll(element) {
+  window.scrollTo({
+    top: element.offsetTop,
+    behavior: 'smooth'
+  })
+}
+
+websiteLink.addEventListener('click', () => smoothScroll(websiteStart));
+storeLink.addEventListener('click', () => smoothScroll(storeStart));
 },{}]},{},[1]);

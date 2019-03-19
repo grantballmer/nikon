@@ -1,2 +1,3 @@
-let overlay = require('./components/overlay');
-let cameraModels = require('./components/cameraModels');
+let overlay = require('./scripts/overlay');
+let cameraModels = require('./scripts/cameraModels');
+let scroll = require('./scripts/scroll');
